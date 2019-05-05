@@ -39,7 +39,8 @@ class LoggerServiceImpl : LoggerService {
 
     override fun logError(tag: String, ref: String?, message: String, inputObject: Any?, outputObject: Any?, misc: String?, level: String, e: Exception) {
         val logBody = "[$tag]-[$ref] :: ($message) : [Input = $inputObject, Output = $outputObject] : ($misc)"
-        errorLogger.debug(logBody)
+        errorLogger.error(logBody)
+        e.printStackTrace()
     }
 
 
